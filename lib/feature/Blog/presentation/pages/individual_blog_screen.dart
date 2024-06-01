@@ -23,6 +23,13 @@ class _IndividualBlogScreenState extends State<IndividualBlogScreen> {
   }
 
   @override
+  void deactivate() {
+    // TODO: implement deactivate
+    context.read<BlogBloc>().add(FetchBlogPosts());
+    super.deactivate();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return BlocConsumer<BlogBloc, BlogState>(
       listener: (context, state) {

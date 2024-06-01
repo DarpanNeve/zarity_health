@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zarity_health_task/feature/Blog/presentation/widgets/blog_view.dart';
 import '../../../../dummy_data.dart';
 import '../../data/data_sources/blog_remote_data_source.dart';
+import '../../data/models/blog.dart';
 import 'bloc/blog_bloc.dart';
 import 'individual_blog_screen.dart';
 
@@ -14,6 +15,10 @@ class BlogScreen extends StatefulWidget {
 }
 
 class _BlogScreenState extends State<BlogScreen> {
+  callback(newValue) {
+    context.read<BlogBloc>().add(FetchBlogPosts());
+  }
+
   @override
   void initState() {
     // TODO: implement initState
