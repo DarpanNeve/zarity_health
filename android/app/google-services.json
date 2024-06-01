@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "992179968138",
+    "project_id": "internship-12",
+    "storage_bucket": "internship-12.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:992179968138:android:59c0d18b96c4650d6c3573",
+        "android_client_info": {
+          "package_name": "com.example.zarity_health_task"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "992179968138-v44p0lvveftqv3gb72l5i9546u6t6ldg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIGYae5qvHNu-fDzu6ZH3goVdT5Z6UaUs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "992179968138-v44p0lvveftqv3gb72l5i9546u6t6ldg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "992179968138-3sang160ibsbhopbeklae3h5upo57kp7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.internshipDairy"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:992179968138:android:4a2b648656852da36c3573",
+        "android_client_info": {
+          "package_name": "com.zarity_health.blog"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "992179968138-t55cka7pcim671jt6gfqknvgv1noo5pj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zarity_health.blog",
+            "certificate_hash": "93b9ee5a2b31cfa5be2576f684d67bc22088fc65"
+          }
+        },
+        {
+          "client_id": "992179968138-v44p0lvveftqv3gb72l5i9546u6t6ldg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIGYae5qvHNu-fDzu6ZH3goVdT5Z6UaUs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "992179968138-v44p0lvveftqv3gb72l5i9546u6t6ldg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "992179968138-3sang160ibsbhopbeklae3h5upo57kp7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.internshipDairy"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
