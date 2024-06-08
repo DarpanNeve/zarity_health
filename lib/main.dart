@@ -2,6 +2,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'package:zarity_health_task/feature/Blog/data/models/blog.dart';
 import 'core/theme/theme.dart';
 import 'feature/Blog/data/data_sources/blog_remote_data_source.dart';
 import 'feature/Blog/data/repositories/blog_repository_impl.dart';
@@ -13,6 +16,8 @@ import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  Hive.registerAdapter(BlogAdapter());
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

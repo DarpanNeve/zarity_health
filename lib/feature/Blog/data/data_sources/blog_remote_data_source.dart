@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 
 import '../models/blog.dart';
 
@@ -15,11 +16,23 @@ class BlogRemoteDataSourceImpl implements BlogRemoteDataSource {
   @override
   Future<List<Blog>> getBlogs() async {
     try {
-      debugPrint('Fetching data from remote');
-      final data = await _fireStore.collection('blogs').get();
-      debugPrint('Data fetched');
-      debugPrint(data.toString());
-      return data.docs.map((e) => Blog.fromJson(e.data())).toList();
+      Box<Blog> blogs = await Hive.openBox<Blog>('blogs');
+      if (blogs.isNotEmpty) {
+        debugPrint('Fetching data from local');
+        debugPrint(blogs.values.toList().toString());
+        return blogs.values.toList();
+      } else {
+        debugPrint('Fetching data from remote');
+        final data = await _fireStore.collection('blogs').get();
+        debugPrint('Data fetched');
+        debugPrint(data.toString());
+        final List<Blog> blogList =
+            data.docs.map((e) => Blog.fromJson(e.data())).toList();
+        for (Blog blog in blogList) {
+          await blogs.put(blog.id, blog);
+        }
+        return data.docs.map((e) => Blog.fromJson(e.data())).toList();
+      }
     } catch (e) {
       debugPrint(e.toString());
       rethrow;

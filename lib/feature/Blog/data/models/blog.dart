@@ -1,10 +1,27 @@
+import 'package:hive/hive.dart';
+
+part 'blog.g.dart';
+
+@HiveType(typeId: 0)
 class Blog {
+  @HiveField(0)
   final String id;
+
+  @HiveField(1)
   final String imageUrl;
+
+  @HiveField(2)
   final String title;
+
+  @HiveField(3)
   final String summary;
 
-  Blog({required this.id, required this.imageUrl, required this.title, required this.summary});
+  Blog({
+    required this.id,
+    required this.imageUrl,
+    required this.title,
+    required this.summary,
+  });
 
   factory Blog.fromJson(Map<String, dynamic> json) {
     return Blog(
